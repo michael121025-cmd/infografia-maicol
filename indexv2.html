@@ -1,0 +1,541 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Maicol Gonzalez - Perfil Estratégico</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800&family=Poppins:wght@600;700&display=swap" rel="stylesheet">
+    <script src="https://unpkg.com/lucide@latest"></script>
+    <style>
+        :root {
+            --primary: #0A2E66;
+            --accent: #3F79C7;
+            --highlight: #6FA4E8;
+            --dark-bg: #081F45;
+            --text-primary: #F2F5F9;
+            --text-secondary: #B8C2D1;
+            --cards: #0F2F5C;
+            --hover: #4F8FE8;
+            --separators: #D9E1EC;
+        }
+
+        body {
+            font-family: 'Inter', sans-serif;
+            background-color: var(--dark-bg);
+            color: var(--text-primary);
+            overflow: hidden;
+            height: 100vh;
+        }
+
+        h1, h2, h3 { font-family: 'Poppins', sans-serif; }
+
+        /* Estructura de Slides con scroll interno funcional */
+        .slide {
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            display: none;
+            padding: 2rem;
+            overflow-y: auto;
+            background-color: var(--dark-bg);
+        }
+
+        .slide.active {
+            display: flex;
+            flex-direction: column;
+            animation: fadeIn 0.5s ease-out forwards;
+        }
+
+        @keyframes fadeIn {
+            from { opacity: 0; transform: scale(0.98); }
+            to { opacity: 1; transform: scale(1); }
+        }
+
+        /* Foto de Portada */
+        .hero-photo {
+            width: 170px;
+            height: 170px;
+            border-radius: 50%;
+            overflow: hidden;
+            border: 3px solid white;
+            box-shadow: 0 4px 20px rgba(0,0,0,0.4);
+            margin: 1.5rem auto;
+            flex-shrink: 0;
+        }
+
+        .hero-photo img {
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+            transform: scale(1.1);
+        }
+
+        /* Tarjetas Dashboard con control de contenido */
+        .dashboard-card {
+            background: var(--cards);
+            border-radius: 1.5rem;
+            transition: all 0.3s ease;
+            cursor: pointer;
+            border: 1px solid rgba(255,255,255,0.05);
+            display: flex;
+            flex-direction: column;
+            overflow: hidden; /* Evita fugas visuales */
+        }
+
+        .dashboard-card:hover {
+            background: #163a75;
+            transform: translateY(-5px);
+            border-color: var(--highlight);
+        }
+
+        /* Bloque Familiar con Alto Contraste */
+        .family-section {
+            background: #F2F5F9;
+            border-radius: 2.5rem;
+            padding: 2.5rem;
+            color: var(--primary);
+            box-shadow: 0 20px 40px rgba(0,0,0,0.3);
+        }
+
+        /* Asegurar que el texto siempre envuelva */
+        .text-wrap-safe {
+            white-space: normal !important;
+            word-wrap: break-word !important;
+            overflow-wrap: break-word !important;
+        }
+
+        /* Imágenes circulares */
+        .circle-frame {
+            width: 100px;
+            height: 100px;
+            border-radius: 50%;
+            overflow: hidden;
+            border: 3px solid white;
+            margin: 0 auto;
+            background: #e2e8f0;
+            flex-shrink: 0;
+        }
+
+        .circle-frame img {
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+            transform: scale(1.1);
+        }
+
+        .btn-nav {
+            background: var(--accent);
+            color: white;
+            padding: 0.75rem 2rem;
+            border-radius: 9999px;
+            font-weight: 600;
+            transition: all 0.3s;
+            flex-shrink: 0;
+        }
+
+        .btn-nav:hover {
+            background: var(--hover);
+            box-shadow: 0 10px 20px rgba(79, 143, 232, 0.3);
+        }
+
+        .timeline-container {
+            position: relative;
+            padding-left: 3rem;
+        }
+
+        .timeline-line {
+            position: absolute;
+            left: 11px;
+            top: 0;
+            bottom: 0;
+            width: 2px;
+            background: linear-gradient(to bottom, var(--highlight), transparent);
+        }
+
+        .timeline-dot {
+            position: absolute;
+            left: 3px;
+            width: 18px;
+            height: 18px;
+            border-radius: 50%;
+            background: var(--highlight);
+            border: 4px solid var(--dark-bg);
+            z-index: 10;
+        }
+    </style>
+</head>
+<body>
+
+    <!-- Logo superior persistente -->
+    <div class="fixed top-8 right-8 z-50">
+        <img src="https://res.cloudinary.com/dnfrt00p2/image/upload/v1773694482/Corona_xbqnv7.png" alt="Logo Corona" class="h-10 w-auto">
+    </div>
+
+    <!-- SECCIÓN 1: PORTADA -->
+    <section id="slide-hero" class="slide active items-center justify-center text-center">
+        <div class="max-w-5xl w-full">
+            <p class="text-highlight tracking-[0.4em] uppercase text-sm mb-2 font-bold">Infografía</p>
+            <div class="hero-photo">
+                <img src="https://res.cloudinary.com/dnfrt00p2/image/upload/v1773691526/Maicol_Gonzalez_dsnkgh.jpg" alt="Maicol Gonzalez">
+            </div>
+            <h1 class="text-5xl md:text-7xl font-bold mb-4 text-white">Maicol Gonzalez Quiroga</h1>
+            <p class="text-text-secondary text-lg md:text-xl font-medium mb-10 max-w-4xl mx-auto leading-relaxed text-wrap-safe">
+                Project Manager Senior | PMO | Transformación de Procesos y Operaciones | Metodologías Ágiles | Logística & Consumo Masivo
+            </p>
+
+            <div class="mb-10 max-w-2xl mx-auto">
+                <div class="h-px w-12 bg-accent mx-auto mb-6 opacity-50"></div>
+                <p class="text-white italic text-base md:text-lg font-light leading-relaxed text-wrap-safe px-4">
+                    "El mayor riesgo es no correr ningún riesgo. En un mundo que cambia rápidamente, la única estrategia que garantiza el fracaso es no arriesgarse."
+                </p>
+                <p class="text-highlight text-[10px] font-bold mt-3 uppercase tracking-widest">— Mark Zuckerberg</p>
+            </div>
+
+            <button onclick="goToSlide('slide-menu')" class="btn-nav flex items-center gap-3 mx-auto">
+                Explorar perfil <i data-lucide="chevron-right"></i>
+            </button>
+        </div>
+    </section>
+
+    <!-- SECCIÓN 2: MENÚ HITOS -->
+    <section id="slide-menu" class="slide items-center justify-center">
+        <div class="max-w-6xl w-full">
+            <h2 class="text-4xl font-bold mb-12 text-center text-white uppercase">Mapa Profesional</h2>
+            <div class="grid grid-cols-1 md:grid-cols-3 gap-6">
+                <div onclick="goToSlide('slide-apoyo')" class="dashboard-card p-8 text-center group border-0">
+                    <i data-lucide="users" class="w-12 h-12 mx-auto mb-4 text-blue-400 group-hover:scale-110 transition-transform"></i>
+                    <h3 class="text-xl font-bold text-white uppercase">Redes de apoyo</h3>
+                </div>
+                <div onclick="goToSlide('slide-formacion')" class="dashboard-card p-8 text-center group border-0">
+                    <i data-lucide="graduation-cap" class="w-12 h-12 mx-auto mb-4 text-indigo-400 group-hover:scale-110 transition-transform"></i>
+                    <h3 class="text-xl font-bold text-white uppercase">Formación</h3>
+                </div>
+                <div onclick="goToSlide('slide-logros')" class="dashboard-card p-8 text-center group border-0">
+                    <i data-lucide="award" class="w-12 h-12 mx-auto mb-4 text-amber-400 group-hover:scale-110 transition-transform"></i>
+                    <h3 class="text-xl font-bold text-white uppercase">Logros</h3>
+                </div>
+                <div onclick="goToSlide('slide-experiencia')" class="dashboard-card p-8 text-center md:col-span-2 group border-0">
+                    <i data-lucide="briefcase" class="w-12 h-12 mx-auto mb-4 text-emerald-400 group-hover:scale-110 transition-transform"></i>
+                    <h3 class="text-xl font-bold text-white uppercase">Trayectoria Profesional</h3>
+                </div>
+                <div onclick="goToSlide('slide-pasatiempos')" class="dashboard-card p-8 text-center group border-0">
+                    <i data-lucide="heart" class="w-12 h-12 mx-auto mb-4 text-rose-500 group-hover:scale-110 transition-transform"></i>
+                    <h3 class="text-xl font-bold text-white uppercase">Pasatiempos</h3>
+                </div>
+            </div>
+            
+            <div class="mt-12 text-center">
+                <button onclick="goToSlide('slide-hero')" class="text-text-secondary hover:text-white flex items-center justify-center gap-2 mx-auto transition-colors font-medium group">
+                    <i data-lucide="chevron-left" class="w-5 h-5 group-hover:-translate-x-1 transition-transform"></i> 
+                    Volver a la Portada
+                </button>
+            </div>
+        </div>
+    </section>
+
+    <!-- SECCIÓN 3: REDES DE APOYO -->
+    <section id="slide-apoyo" class="slide items-center">
+        <div class="max-w-6xl w-full">
+            <h2 class="text-4xl font-bold mb-10 text-center text-blue-400 uppercase">Redes de Apoyo</h2>
+            <div class="family-section mb-10">
+                <h3 class="text-center text-xs font-bold mb-10 uppercase tracking-widest opacity-60">Núcleo Familiar</h3>
+                <div class="grid grid-cols-2 md:grid-cols-4 gap-8 text-center">
+                    <div class="flex flex-col items-center">
+                        <div class="circle-frame mb-4 shadow-md">
+                            <img src="https://res.cloudinary.com/dnfrt00p2/image/upload/v1773691545/Mam%C3%A1_j5rxrc.jpg" alt="Maria Quiroga">
+                        </div>
+                        <p class="font-bold text-base text-primary">Maria Quiroga</p>
+                        <p class="text-[10px] font-bold text-accent uppercase tracking-tight">Madre / Comerciante</p>
+                    </div>
+                    <div class="flex flex-col items-center">
+                        <div class="circle-frame mb-4 shadow-md">
+                            <img src="https://res.cloudinary.com/dnfrt00p2/image/upload/v1773691492/Alejandra_Rincon_wwgl4q.jpg" alt="Alejandra Rincón">
+                        </div>
+                        <p class="font-bold text-base text-primary">Alejandra Rincón</p>
+                        <p class="text-[10px] font-bold text-accent uppercase tracking-tight text-wrap-safe">Pareja / Ing. Alimentos</p>
+                    </div>
+                    <div class="flex flex-col items-center">
+                        <div class="circle-frame mb-4 shadow-md">
+                            <img src="https://res.cloudinary.com/dnfrt00p2/image/upload/v1773691584/Rocio_Gonzalez_djwlok.jpg" alt="Rocio Gonzalez">
+                        </div>
+                        <p class="font-bold text-base text-primary">Rocio Gonzalez</p>
+                        <p class="text-[10px] font-bold text-accent uppercase tracking-tight">Hermana / Contadora</p>
+                    </div>
+                    <div class="flex flex-col items-center">
+                        <div class="circle-frame mb-4 shadow-md">
+                            <img src="https://res.cloudinary.com/dnfrt00p2/image/upload/v1773691559/Maria_Jase_Cristancho_ppbfnk.jpg" alt="Maria Jose" style="object-position: center 15%;">
+                        </div>
+                        <p class="font-bold text-base text-primary">Maria Jose C.</p>
+                        <p class="text-[10px] font-bold text-accent uppercase tracking-tight text-wrap-safe">Hermana / Ing. Industrial</p>
+                    </div>
+                </div>
+            </div>
+            
+            <div class="grid md:grid-cols-2 gap-6">
+                <!-- Mentor Ajustado -->
+                <div class="bg-cards p-6 rounded-3xl flex items-center gap-5 border-0 shadow-lg text-white">
+                    <div class="w-20 h-20 rounded-full overflow-hidden shrink-0 border-2 border-blue-400 bg-white p-0.5">
+                        <img src="https://res.cloudinary.com/dnfrt00p2/image/upload/v1773691572/Oscar_Poveda_ktfoxp.jpg" class="w-full h-full object-contain" alt="Oscar Poveda">
+                    </div>
+                    <div class="flex-1">
+                        <p class="text-blue-400 text-[10px] font-bold uppercase tracking-widest mb-1">Mentor</p>
+                        <h4 class="font-bold text-lg leading-tight mb-1">Oscar Poveda</h4>
+                        <p class="text-text-secondary text-[11px] leading-relaxed text-wrap-safe">Gerente CTO & Soluciones Digitales. Líder tecnológico con enfoque humano.</p>
+                    </div>
+                </div>
+                
+                <!-- Inspiración Ajustado -->
+                <div class="bg-cards p-6 rounded-3xl flex items-center gap-5 border-0 shadow-lg text-white">
+                    <div class="w-20 h-20 rounded-full overflow-hidden shrink-0 border-2 border-accent bg-white p-0.5">
+                        <img src="https://res.cloudinary.com/dnfrt00p2/image/upload/v1773691503/Alfonso_Palacios_vdsblh.jpg" class="w-full h-full object-contain" alt="Jorge Palacios">
+                    </div>
+                    <div class="flex-1">
+                        <p class="text-accent text-[10px] font-bold uppercase tracking-widest mb-1">Inspiración</p>
+                        <h4 class="font-bold text-lg leading-tight mb-1">Jorge Palacios</h4>
+                        <p class="text-text-secondary text-[11px] leading-relaxed text-wrap-safe">Gerente General Altipal. Estratega enfocado en generar bienestar colectivo.</p>
+                    </div>
+                </div>
+            </div>
+            <button onclick="goToSlide('slide-menu')" class="btn-nav mx-auto block mt-10">Volver al Mapa</button>
+        </div>
+    </section>
+
+    <!-- SECCIÓN 4: FORMACIÓN -->
+    <section id="slide-formacion" class="slide items-center">
+        <div class="max-w-4xl w-full">
+            <h2 class="text-4xl font-bold mb-12 text-center text-indigo-400 uppercase">Formación Académica</h2>
+            <div class="timeline-container">
+                <div class="timeline-line"></div>
+                <div class="relative mb-8 pl-8 text-wrap-safe">
+                    <div class="timeline-dot" style="top: 6px;"></div>
+                    <span class="text-highlight font-bold text-xs uppercase">2025</span>
+                    <h3 class="text-xl font-bold text-white">Especialización en Gerencia de Proyectos e Inteligencia de Negocios</h3>
+                    <p class="text-text-secondary text-sm italic">Politécnico Grancolombiano</p>
+                </div>
+                <div class="relative mb-8 pl-8 text-wrap-safe">
+                    <div class="timeline-dot bg-indigo-400" style="top: 6px;"></div>
+                    <span class="text-indigo-300 font-bold text-xs uppercase tracking-tight">Certificación</span>
+                    <h3 class="text-xl font-bold text-white">Scrum Master Professional Certificate</h3>
+                </div>
+                <div class="relative mb-8 pl-8 text-wrap-safe">
+                    <div class="timeline-dot bg-accent" style="top: 6px;"></div>
+                    <span class="text-accent font-bold text-xs uppercase tracking-tight">2020</span>
+                    <h3 class="text-xl font-bold text-white">Diplomado en Logística y Gerencia de la Cadena de Abastecimiento</h3>
+                    <p class="text-text-secondary text-sm italic">Universidad de La Sabana</p>
+                </div>
+                <div class="relative mb-8 pl-8 text-wrap-safe">
+                    <div class="timeline-dot bg-highlight" style="top: 8px;"></div>
+                    <span class="text-highlight font-bold text-xs uppercase tracking-tight">2019</span>
+                    <h3 class="text-xl font-bold text-white">Ingeniería Industrial</h3>
+                    <p class="text-text-secondary text-sm italic">Politécnico Grancolombiano</p>
+                </div>
+                <div class="relative mb-8 pl-8 text-wrap-safe">
+                    <div class="timeline-dot bg-slate-500" style="top: 6px;"></div>
+                    <span class="text-slate-400 font-bold text-xs uppercase tracking-tight">2016</span>
+                    <h3 class="text-xl font-bold text-white">Tecnólogo en Logística</h3>
+                    <p class="text-text-secondary text-sm italic">Politécnico Grancolombiano</p>
+                </div>
+                <div class="relative pl-8 text-wrap-safe">
+                    <div class="timeline-dot bg-emerald-500 animate-pulse" style="top: 6px;"></div>
+                    <span class="text-emerald-400 font-bold text-xs uppercase tracking-tight">Idiomas</span>
+                    <h3 class="text-xl font-bold text-white">Inglés <span class="bg-emerald-500/20 text-emerald-300 px-3 py-0.5 rounded-full text-[10px] font-bold ml-2">EN CURSO</span></h3>
+                    <p class="text-text-secondary text-sm">Smart Academia de Idiomas</p>
+                </div>
+            </div>
+            <button onclick="goToSlide('slide-menu')" class="btn-nav mx-auto block mt-12">Volver al Mapa</button>
+        </div>
+    </section>
+
+    <!-- SECCIÓN 5: LOGROS (Imagen completa a la derecha) -->
+    <section id="slide-logros" class="slide items-center">
+        <div class="max-w-7xl w-full px-4">
+            <h2 class="text-4xl font-bold mb-10 text-center text-amber-400 uppercase">Logros Significativos</h2>
+            <div class="grid grid-cols-1 lg:grid-cols-12 gap-8 items-start">
+                
+                <div class="lg:col-span-5 flex flex-col gap-5 h-full">
+                    <div class="dashboard-card p-6 min-h-fit">
+                        <div class="flex items-center gap-4 mb-3 text-white">
+                            <i data-lucide="database" class="w-7 h-7 text-amber-400"></i>
+                            <h3 class="text-lg font-bold leading-tight uppercase">Implementación WMS y RFP ERP</h3>
+                        </div>
+                        <p class="text-text-secondary text-xs leading-relaxed text-wrap-safe">
+                            Liderazgo en la ejecución de un WMS para optimización logística y participación estratégica en el proceso RFP para la selección de ERP corporativo en Altipal.
+                        </p>
+                    </div>
+
+                    <div class="dashboard-card p-6 min-h-fit">
+                        <div class="flex items-center gap-4 mb-3 text-white">
+                            <i data-lucide="refresh-cw" class="w-7 h-7 text-emerald-400"></i>
+                            <h3 class="text-lg font-bold leading-tight uppercase">Transformación Ágil</h3>
+                        </div>
+                        <p class="text-text-secondary text-xs leading-relaxed text-wrap-safe">
+                            Evolución hacia marcos <strong>Agile Scrum</strong>, mejorando sustancialmente la eficiencia y entrega de valor en proyectos de alto impacto organizacional.
+                        </p>
+                    </div>
+
+                    <div class="dashboard-card p-6 min-h-fit">
+                        <div class="flex items-center gap-4 mb-3 text-white">
+                            <i data-lucide="bot" class="w-7 h-7 text-orange-400"></i>
+                            <h3 class="text-lg font-bold leading-tight text-white uppercase">Ganador #Sharktipal</h3>
+                        </div>
+                        <p class="text-text-secondary text-xs leading-relaxed text-wrap-safe">
+                            Proyecto ganador en la iniciativa de innovación enfocada en la transformación digital mediante soluciones basadas en Inteligencia Artificial.
+                        </p>
+                    </div>
+                </div>
+
+                <div class="lg:col-span-7 h-full flex items-center justify-center bg-white/5 rounded-[2rem] border border-white/10 p-4">
+                    <img src="https://res.cloudinary.com/dnfrt00p2/image/upload/v1773691517/Innova_i3hqqs.jpg" 
+                         class="w-full max-h-[450px] object-contain rounded-xl shadow-2xl" 
+                         alt="Sharktipal">
+                </div>
+            </div>
+            <button onclick="goToSlide('slide-menu')" class="btn-nav mx-auto block mt-8">Volver al Mapa</button>
+        </div>
+    </section>
+
+    <!-- SECCIÓN 6: TRAYECTORIA -->
+    <section id="slide-experiencia" class="slide items-center">
+        <div class="max-w-5xl w-full">
+            <h2 class="text-4xl font-bold mb-12 text-center text-emerald-400 uppercase">Trayectoria Profesional</h2>
+            <div class="relative pl-12 border-l-2 border-emerald-400/20 ml-6 space-y-10">
+                
+                <div class="relative">
+                    <div class="absolute -left-[60px] top-0 w-12 h-12 bg-[#0F2F5C] rounded-full border-2 border-emerald-400 flex items-center justify-center shadow-lg shrink-0">
+                        <i data-lucide="star" class="w-6 h-6 text-emerald-400"></i>
+                    </div>
+                    <div class="dashboard-card p-6 text-white border-0">
+                        <div class="flex flex-col sm:flex-row justify-between mb-2">
+                            <h3 class="text-xl font-bold">Jefe de Proyectos y Procesos</h3>
+                            <span class="text-text-secondary font-medium text-xs sm:mt-1">Feb 2023 – Actualmente</span>
+                        </div>
+                        <p class="text-emerald-400 font-bold uppercase tracking-widest text-[10px] mb-2">ALTIPAL S.A.S.</p>
+                        <p class="text-text-secondary text-xs leading-relaxed italic text-wrap-safe">
+                            Dirección estratégica de proyectos bajo marcos Scrum y Lean. Optimización de tiempos de entrega y mejora de calidad corporativa.
+                        </p>
+                    </div>
+                </div>
+
+                <div class="relative opacity-90">
+                    <div class="absolute -left-[60px] top-0 w-12 h-12 bg-[#0F2F5C] rounded-full border-2 border-emerald-500/50 flex items-center justify-center shrink-0">
+                        <i data-lucide="settings" class="w-6 h-6 text-emerald-500/70"></i>
+                    </div>
+                    <div class="dashboard-card p-6 text-white border-0">
+                        <div class="flex flex-col sm:flex-row justify-between mb-2">
+                            <h3 class="text-xl font-bold">Ingeniero de Proyectos PMO</h3>
+                            <span class="text-text-secondary font-medium text-xs sm:mt-1">Feb 2021 – Feb 2023</span>
+                        </div>
+                        <p class="text-emerald-500/80 font-bold uppercase tracking-widest text-[10px] mb-2">ALTIPAL S.A.S.</p>
+                        <p class="text-text-secondary text-xs leading-relaxed text-wrap-safe">Mapeo y optimización de modelos operativos alineados a la estrategia corporativa.</p>
+                    </div>
+                </div>
+
+                <div class="relative opacity-80">
+                    <div class="absolute -left-[60px] top-0 w-12 h-12 bg-[#0F2F5C] rounded-full border-2 border-blue-400/50 flex items-center justify-center shrink-0">
+                        <i data-lucide="truck" class="w-6 h-6 text-blue-400/70"></i>
+                    </div>
+                    <div class="dashboard-card p-6 text-white border-0">
+                        <div class="flex flex-col sm:flex-row justify-between mb-2">
+                            <h3 class="text-xl font-bold">Profesional de Operaciones</h3>
+                            <span class="text-text-secondary font-medium text-xs sm:mt-1 text-nowrap">Jul 2020 – Ene 2021</span>
+                        </div>
+                        <p class="text-blue-400/80 font-bold uppercase tracking-widest text-[10px] mb-2">TRANSPORTES TEV – BAVARIA</p>
+                        <p class="text-text-secondary text-xs leading-relaxed text-wrap-safe">Gestión integral de transporte nacional. Implementación de modelos de eficiencia logística.</p>
+                    </div>
+                </div>
+
+                <div class="relative opacity-70">
+                    <div class="absolute -left-[60px] top-0 w-12 h-12 bg-[#0F2F5C] rounded-full border-2 border-slate-500 flex items-center justify-center shrink-0">
+                        <i data-lucide="box" class="w-6 h-6 text-slate-400"></i>
+                    </div>
+                    <div class="dashboard-card p-6 text-white border-0">
+                        <div class="flex flex-col sm:flex-row justify-between mb-2">
+                            <h3 class="text-xl font-bold">Analista Senior de Inventarios</h3>
+                            <span class="text-text-secondary font-medium text-xs sm:mt-1 text-nowrap">Jul 2016 – Nov 2019</span>
+                        </div>
+                        <p class="text-slate-400 font-bold uppercase tracking-widest text-[10px] mb-2">L’ORÉAL COLOMBIA</p>
+                        <p class="text-text-secondary text-xs leading-relaxed text-wrap-safe">Optimización estratégica de stock y logística inversa mediante análisis profundo de indicadores VMI.</p>
+                    </div>
+                </div>
+
+            </div>
+            <button onclick="goToSlide('slide-menu')" class="btn-nav mx-auto block mt-10">Volver al Mapa</button>
+        </div>
+    </section>
+
+    <!-- SECCIÓN 7: PASATIEMPOS -->
+    <section id="slide-pasatiempos" class="slide items-center">
+        <div class="max-w-6xl w-full">
+            <h2 class="text-4xl font-bold mb-12 text-center text-rose-500 uppercase">Pasatiempos e Intereses</h2>
+            <div class="grid grid-cols-1 md:grid-cols-2 gap-6">
+                <div class="dashboard-card p-6 border-0 text-white">
+                    <div class="flex items-center gap-4 mb-3">
+                        <div class="w-12 h-12 bg-rose-500/10 rounded-xl flex items-center justify-center text-rose-500 shrink-0">
+                            <i data-lucide="trophy" class="w-6 h-6"></i>
+                        </div>
+                        <h3 class="text-xl font-bold uppercase">Deporte</h3>
+                    </div>
+                    <p class="text-text-secondary text-xs leading-relaxed text-wrap-safe">Fútbol y tenis para fortalecer la disciplina, trabajo en equipo y el equilibrio personal.</p>
+                </div>
+                <div class="dashboard-card p-6 border-0 text-white">
+                    <div class="flex items-center gap-4 mb-3">
+                        <div class="w-12 h-12 bg-blue-400/10 rounded-xl flex items-center justify-center text-blue-400 shrink-0">
+                            <i data-lucide="plane" class="w-6 h-6"></i>
+                        </div>
+                        <h3 class="text-xl font-bold uppercase">Viajes</h3>
+                    </div>
+                    <p class="text-text-secondary text-xs leading-relaxed text-wrap-safe">Pasión por explorar destinos compartiendo experiencias con la familia y ampliando perspectivas.</p>
+                </div>
+                <div class="dashboard-card p-6 border-0 text-white">
+                    <div class="flex items-center gap-4 mb-3 text-wrap-safe">
+                        <div class="w-12 h-12 bg-indigo-400/10 rounded-xl flex items-center justify-center text-indigo-400 shrink-0">
+                            <i data-lucide="cpu" class="w-6 h-6"></i>
+                        </div>
+                        <h3 class="text-xl font-bold uppercase">Tecnología e IA</h3>
+                    </div>
+                    <p class="text-text-secondary text-xs leading-relaxed text-wrap-safe mb-2">Interés constante por la innovación y aprendizaje en transformación digital. Ref: Gabriel Alzate Tobón.</p>
+                </div>
+                <div class="dashboard-card p-6 border-0 text-white">
+                    <div class="flex items-center gap-4 mb-3">
+                        <div class="w-12 h-12 bg-amber-400/10 rounded-xl flex items-center justify-center text-amber-400 shrink-0">
+                            <i data-lucide="book-open" class="w-6 h-6"></i>
+                        </div>
+                        <h3 class="text-xl font-bold uppercase">Lectura</h3>
+                    </div>
+                    <p class="text-text-secondary text-xs leading-relaxed text-wrap-safe mb-2">Innovación digital como pilar de crecimiento. Libro: “Edad de las máquinas invisibles”.</p>
+                </div>
+            </div>
+            <button onclick="goToSlide('slide-menu')" class="btn-nav mx-auto block mt-10">Volver al Mapa</button>
+        </div>
+    </section>
+
+    <!-- SECCIÓN FINAL -->
+    <section id="slide-final" class="slide items-center justify-center text-center">
+        <div class="max-w-4xl w-full">
+            <img src="https://res.cloudinary.com/dnfrt00p2/image/upload/v1773694482/Corona_xbqnv7.png" alt="Logo final" class="h-20 w-auto mx-auto mb-16">
+            <h2 class="text-7xl font-bold mb-6 text-white uppercase tracking-tighter">Gracias.</h2>
+            <p class="text-highlight text-3xl font-light italic">Maicol Gonzalez Quiroga</p>
+            <button onclick="goToSlide('slide-hero')" class="mt-16 text-text-secondary hover:text-white border-b border-white/20 pb-2 flex items-center gap-2 mx-auto uppercase text-xs tracking-widest font-bold">
+                <i data-lucide="refresh-cw" class="w-4 h-4"></i> Reiniciar
+            </button>
+        </div>
+    </section>
+
+    <script>
+        lucide.createIcons();
+
+        function goToSlide(slideId) {
+            const slides = document.querySelectorAll('.slide');
+            slides.forEach(slide => slide.classList.remove('active'));
+            const target = document.getElementById(slideId);
+            if(target) {
+                target.classList.add('active');
+                target.scrollTop = 0;
+            }
+        }
+    </script>
+</body>
+</html>
